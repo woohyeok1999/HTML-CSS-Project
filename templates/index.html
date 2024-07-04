@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scraped Data Display</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        h4 {
+            color:black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="kospi-section">
+            <h1>코스피 정보 from <span class="naver-color">NAVER</span> Finance</h1>
+
+            <!-- 코스피 정보와 그래프를 여기에 포함 -->
+            {{ kospi_index|safe }}
+            
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const numQuotElements = document.querySelectorAll('.num_quot.up');
+        
+                    numQuotElements.forEach(function(numQuot) {
+                        const num3 = numQuot.querySelector('.num3'); // num3 요소 찾기
+                        if (num3) {
+                            const text = num3.textContent; // 텍스트 내용 가져오기
+                            const percentageValue = parseFloat(text); // 퍼센트 값을 숫자로 변환
+        
+                            if (percentageValue > 0) {
+                                numQuot.style.color = 'red'; // 양수인 경우 빨간색
+                            } else if (percentageValue < 0) {
+                                numQuot.style.color = 'blue'; // 음수인 경우 파란색
+                            } else {
+                                numQuot.style.color = 'black'; // 0인 경우 검정색
+                            }
+                        }
+                    });
+                });
+            </script>
+
+        </div>
+
+        <div class="news-section">
+            <h1><span class="icon"></span>관련 <span class="news-color">주요뉴스</span></h1>
+            <!-- 뉴스 기사 리스트 -->
+            {% for article in news_articles[:10] %}
+                <div class="news-item">
+                    <img src="{{ article.thumb_url }}" alt="News Thumbnail" style="width:100px; height:auto;">
+                    <div class="text-content">
+                        <div class="title">
+                            <h2><a href="{{ article.link }}">{{ article.title }}</a></h2>
+                        </div>
+                        <p>{{ article.summary }}</p>
+                    </div>
+                    
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

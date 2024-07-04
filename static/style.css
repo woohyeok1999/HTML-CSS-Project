@@ -1,0 +1,235 @@
+h1 {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
+.icon {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-image: url('https://github.com/woohyeok1999/HTML-CSS-test/blob/main/icon.png?raw=true');
+    background-size: cover;
+    vertical-align: middle;
+    margin-right: 5px; /* 필요에 따라 조정 */
+    margin-bottom: 10px;
+}
+
+.naver-color {
+    color: #03C75A; /* 네이버의 상징색인 파란색으로 설정 */
+}
+.news-color{
+    color: red;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0; /* 여백 제거 */
+    padding: 0; /* 패딩 제거 */
+    background-color: #ffffff; /* 배경색을 흰색으로 설정 */
+}
+.kospi_area {
+    background-color: #ffffff; /* 배경색 변경 */
+    padding: 15px; /* 패딩 조정 */
+    margin-top: 10px; /* 상단 마진 조정 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 그림자 효과 */
+    border: 1px solid #e1e1e8; /* 테두리 추가 */
+    padding-bottom: 80%;
+}
+
+.heading_area {
+    text-decoration: none;
+    align-items: center;
+    background-color: #FFEE58;
+    border-radius: 5px; /* 모서리 둥글게 */
+    text-align: center;
+    line-height: 2;
+}
+.heading_area h4 {
+    padding-top: 5px;
+    margin:0;
+}
+.heading_area a {
+    text-decoration: none;
+}
+.num, .num2, .per {
+    margin-right: 10px;
+    position: relative;
+}
+.num::after, .num2::after, .per::after {
+    content: "/";
+    margin-left: 10px;
+}
+.blind::after {
+    content: "";
+    margin-left: 0;
+}
+.blind {
+    font-style: normal;
+    color:red;
+}
+
+.chart_area {
+    margin-bottom: 20px; /* 차트 아래 마진 추가 */
+}
+.chart_area .blind {
+    color:gray;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center; /* 제목을 중앙 정렬 */
+    margin-top: 30px; /* 위아래 마진 설정 */
+    margin-bottom: 10px;
+    text-decoration: underline wavy; /* 물결 밑줄 적용 */
+    text-decoration-color: gray; /* 밑줄 색상 설정 */
+}
+.chart_area img {
+    width: 100%; /* 너비를 부모 요소에 맞춤 */
+    height: auto; /* 높이 자동 조정 */
+    border-radius: 5px; /* 이미지 모서리 둥글게 */
+}
+
+.dsc_area {
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center; /* 아이템 세로 중앙 정렬 */
+    background-color: #ffffff; /* 배경색 변경 */
+    padding: 1% 2%; /* Responsive padding based on the percentage of the container's width */
+    margin: 0 auto;
+    border-radius: 5px; /* 모서리 둥글게 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 그림자 효과 */
+    width: 98%; /* Slightly less than full width to account for padding and borders */
+    box-sizing: border-box; /* Includes padding and border in the width and height */
+    max-height: 95%;
+}
+.dl {
+    display: table; /* Makes the container behave like a table */
+    text-align: center;
+    width: 100%; /* Takes full width */
+    border-collapse: collapse;
+}
+.dl dt, .dl dd {
+    display: table-cell; /* Each dt and dd behaves like a table cell */
+    text-align: center; /* Centers text in each cell */
+    padding: 10px; /* Adds padding inside each cell for spacing */
+    border: 1px solid #ddd; /* Adds a subtle border for clarity */
+}
+.dl dt {
+    background-color: #f4f4f8; /* Light grey background for headers */
+    color: #000; /* Black text for better readability */
+    font-weight: bold; /* Makes font bold */
+}
+.dl dd {
+    background-color: #fff; /* White background for data cells */
+}
+.dl dt a {
+    color:black;
+    font-weight: bold;
+    text-decoration: none;
+}
+.dl dd .blind {
+    color:black;
+}
+dd a{
+    text-decoration: none;
+}
+dd.up a {
+    color: red; /* 긍정적 값의 색상 */
+}
+dd.dn a {
+    color: blue; /* 부정적 값의 색상 */
+}
+
+.dl2 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Creates five columns of equal width */
+    grid-template-rows: auto auto; /* Two rows, height adjusts to content */
+    width: 100%; /* Full width */
+    gap: 0;
+    margin-bottom: 20px; /* Space below the grid for separation */
+}
+.dl2 dt {
+    grid-row: 1; /* Place all dt elements in the first row */
+    text-align: center;
+    background-color: #f4f4f8;
+    border: 1px solid #ddd;
+    padding: 10px;
+    color: #000;
+    font-weight: bold;
+    margin:0;
+}
+.dl2 dd {
+    grid-row: 2; /* Place all dd elements in the second row */
+    text-align: center;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin :0;
+}
+
+.dl2 dd a {
+    color:green;
+    padding-right: 10px;
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap; /* 내용이 넘칠 경우 다음 줄로 */
+    justify-content: space-between;
+}
+.kospi-section, .news-section {
+    flex: 1;
+    padding: 10px;
+    margin: 5px;
+    background-color: #f4f4f8; /* 배경색 변경 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 그림자 효과 */
+}
+.kospi-section {
+    margin-right: 10px; /* 오른쪽에 간격을 줍니다. */
+    height: 160%
+}
+.news-section {
+    margin-left: 10px; /* 왼쪽에 간격을 줍니다. */
+}
+
+.news-item {
+    display: inline-flex; /* Allows inline positioning of elements */
+    align-items: flex-start; /* Aligns items at the top */
+    
+    background-color: #f9f9f9; /* 배경색 추가 */
+    padding: 10px; /* 패딩 추가 */
+    margin-bottom: 20px; /* 아래쪽 마진 추가 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 그림자 효과 */
+}
+.news-item img {
+    width: 100px; /* 이미지 너비 설정 */
+    height: auto; /* 이미지 높이 자동 조정 */
+    margin-right: 10px; /* 이미지와 텍스트 사이의 간격 */
+    margin-bottom: 10px;
+}
+.news-item .text-content {
+    display: flex;
+    flex-direction: column; /* Organizes content vertically */
+    width: 100%; /* Takes the remaining space */
+}
+.news-item .title {
+    display: flex; /* Allows title to be next to the image */
+}
+.news-item h2 {
+    text-align: left;
+    margin: 0; /* Removes margin around the title */
+    padding: 0; /* Removes padding */
+    font-size: 12px; /* Sets font size for the title */
+    font-weight: bold; /* Makes the title bold */
+    color: #000; /* Sets the text color to black */
+}
+.news-item p {
+    margin-top: 5px;
+    font-size: 10px; /* Sets font size for the summary */
+    color: #666; /* Sets the text color for the summary */
+    line-height: 1.5; /* Adjusts the line height for better readability */
+}
